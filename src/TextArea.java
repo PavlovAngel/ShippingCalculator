@@ -6,6 +6,7 @@ public class TextArea extends JTextArea {
         this.setVisible(true);
         this.setPreferredSize(new Dimension(450, 70));
         this.setFont(new Font("Consolas", Font.BOLD, 16));
+        this.setEditable(false);
 
 
     }

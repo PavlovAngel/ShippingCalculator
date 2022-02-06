@@ -12,7 +12,10 @@ public class Frame extends JFrame implements ActionListener {
     Button button = new Button();
     TextAreaPanel textAreaPanel = new TextAreaPanel();
     BoxLabelPanel boxLabelPanel = new BoxLabelPanel();
-    public static int value;
+    public static int quantity;
+    public static int weight;
+    public static int boxSize;
+
     Image image = Toolkit.getDefaultToolkit().getImage("C:\\Users\\User\\IdeaProjects\\com.Impuls97.Shipping\\src\\calculator.png");
 
     Frame() throws IOException {
@@ -30,7 +33,7 @@ public class Frame extends JFrame implements ActionListener {
         this.pack();
         this.setVisible(true);
         this.setResizable(false);
-        this.setTitle("Main.Calculator");
+        this.setTitle("Calculator");
         this.setSize(420, 420);
         this.getContentPane().setBackground(new Color(212, 212, 212));
         this.setLocation(800, 100);
@@ -55,7 +58,9 @@ public class Frame extends JFrame implements ActionListener {
         if (e.getSource() == comboBoxPanel.comboBox) {
             String text = Objects.requireNonNull(comboBoxPanel.comboBox.getSelectedItem()).toString();
             String[] array = Details.HashMapFromTextFile().get(text).split(", ");
-            value = Integer.parseInt(array[0]);
+            quantity = Integer.parseInt(array[0]);
+            boxSize = Integer.parseInt(array[1]);
+            weight = Integer.parseInt(array[2]);
 
 
         }

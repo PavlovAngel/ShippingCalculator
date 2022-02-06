@@ -15,12 +15,12 @@ public class Calculator {
     public static int finalBoxes;
 
     public static void calculate() throws IOException {
-        detailPcsInBox = Frame.value;
+        detailPcsInBox = Frame.quantity;
 
         boxSize = Details.getDetailInfo()[1];
         boxes = orderQuantity / detailPcsInBox;
         left = orderQuantity % detailPcsInBox;
-        finalBoxes += getBoxSize();
+        finalBoxes += Frame.weight;
         boxCounter = String.format("Boxes: %d", finalBoxes);
 
         if (left > 0 && orderQuantity > detailPcsInBox) {
