@@ -3,13 +3,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.Objects;
 
 public class Frame extends JFrame implements ActionListener {
     TextFieldPanel textFieldPanel = new TextFieldPanel();
     ComboBoxPanel comboBoxPanel = new ComboBoxPanel();
     LabelPanel labelPanel = new LabelPanel();
-    public static String detailName;
-    public static int orderSize;
     Button button = new Button();
     TextAreaPanel textAreaPanel = new TextAreaPanel();
     BoxLabelPanel boxLabelPanel = new BoxLabelPanel();
@@ -54,7 +53,7 @@ public class Frame extends JFrame implements ActionListener {
 
         }
         if (e.getSource() == comboBoxPanel.comboBox) {
-            String text = comboBoxPanel.comboBox.getSelectedItem().toString();
+            String text = Objects.requireNonNull(comboBoxPanel.comboBox.getSelectedItem()).toString();
             String[] array = Details.HashMapFromTextFile().get(text).split(", ");
             value = Integer.parseInt(array[0]);
 
