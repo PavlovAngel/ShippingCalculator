@@ -17,7 +17,6 @@ public class Calculator {
     public static void calculate() throws IOException {
         detailPcsInBox = Frame.quantity;
 
-        boxSize = Details.getDetailInfo()[1];
         boxes = orderQuantity / detailPcsInBox;
         left = orderQuantity % detailPcsInBox;
         finalBoxes += Frame.weight;
